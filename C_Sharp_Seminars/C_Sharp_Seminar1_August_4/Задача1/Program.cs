@@ -15,16 +15,16 @@ int Prompt(string message)
     return result;                          // Возвращает результат
 }
 
-int valueOne = Prompt("Введите число 1 >");  // Объявление первой переменной и введение его значения
-int valueTwo = Prompt("Введите число 2 >");  // Объявление второй переменной и введение его значения
+int valueOne = Prompt("Введите число 1 > ");  // Объявление первой переменной и введение его значения
+int valueTwo = Prompt("Введите число 2 > ");  // Объявление второй переменной и введение его значения
 
-int result = valueOne * valueOne;            // Вычисляем квадрат первой переменной
+int result = valueTwo * valueTwo;            // Вычисляем квадрат первой переменной
 
-if (result == valueTwo)
+if (result == valueOne)
 {
-    System.Console.WriteLine($"Квадрат числа {valueOne} равен {result}"); // Вывод результата
+    System.Console.WriteLine($"Квадрат числа {valueTwo}, да, равен {valueOne}"); // Вывод результата
 }
 else
 {
-    System.Console.WriteLine($"Квадрат числа {valueOne} неравен {valueTwo}");
-} // Вывод результата
+    System.Console.WriteLine($"Квадрат числа {valueTwo}, нет, не равен {valueOne}"); // Вывод результата
+}

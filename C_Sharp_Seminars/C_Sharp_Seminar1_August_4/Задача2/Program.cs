@@ -12,33 +12,37 @@ int Prompt(string message)
     return result;                          // Возвращает результат
 }
 
-int valueOne = Prompt("Введите число, соответствующее дню недели >");  // Объявление переменной и введение его значения
+int valueOne = Prompt("Введите число, соответствующее дню недели > ");  // Объявление переменной и введение его значения
 
 if (valueOne == 1)
 {
-    System.Console.WriteLine($"{valueOne} день недели это ПОНЕДЕЛЬНИК"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> ПОНЕДЕЛЬНИК"); // Вывод результата
 }
-if (valueOne == 2)
+else if (valueOne == 2)
 {
-    System.Console.WriteLine($"{valueOne} день недели это ВТОРНИК"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> ВТОРНИК"); // Вывод результата
 }
-if (valueOne == 3)
+else if (valueOne == 3)
 {
-    System.Console.WriteLine($"{valueOne} день недели это СРЕДА"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> СРЕДА"); // Вывод результата
 }
-if (valueOne == 4)
+else if (valueOne == 4)
 {
-    System.Console.WriteLine($"{valueOne} день недели это ЧЕТВЕРГ"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> ЧЕТВЕРГ"); // Вывод результата
 }
-if (valueOne == 5)
+else if (valueOne == 5)
 {
-    System.Console.WriteLine($"{valueOne} день недели это ПЯТНИЦА"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> ПЯТНИЦА"); // Вывод результата
 }
-if (valueOne == 6)
+else if (valueOne == 6)
 {
-    System.Console.WriteLine($"{valueOne} день недели это СУББОТА"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> СУББОТА"); // Вывод результата
 }
-if (valueOne == 7)
+else if (valueOne == 7)
 {
-    System.Console.WriteLine($"{valueOne} день недели это ВОСКРЕСЕНЬЕ"); // Вывод результата
+    System.Console.WriteLine($"{valueOne} день недели -> ВОСКРЕСЕНЬЕ"); // Вывод результата
+}
+else
+{
+    System.Console.WriteLine("Такого дня недели не существует");
 }
