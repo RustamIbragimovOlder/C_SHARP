@@ -15,13 +15,13 @@ int value;                                  // Объявление переме
 
 value = Prompt("Введите число -> ");        // Вводим значение числа
 
-int AbsRemains = Math.Abs(value % 2);       // Определение модуля остатка от деления на 2
+int Remains = value % 2;                    // Определение модуля остатка от деления на 2
 
-if (AbsRemains > 0)                            // Определение четности
+if (Remains == 0)                            // Определение четности
 {
-    System.Console.WriteLine($"{value} -> нечетное"); // Вывод результата
+    System.Console.WriteLine($"{value} -> четное"); // Вывод результата
 }
 else
 {
-    System.Console.WriteLine($"{value} -> четное"); // Вывод результата
+    System.Console.WriteLine($"{value} -> нечетное"); // Вывод результата
 }
