@@ -9,8 +9,5 @@ int Prompt(string message)
     return result;                          // Возвращает результат
 }
 
-int value;                                  // Объявление переменной
-value = Prompt("Введите число > ");          // Вводим значение
-//или int value = Promt("Введите число > ") Сразу объявляем переменную и вводим ее значение
-int result = value * value;                 // Вычисляем квадрат
 System.Console.WriteLine($"Квадрат числа {value} равен {result}"); // Вывод результата
+
