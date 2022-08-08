@@ -15,7 +15,7 @@ int Prompt(string message)
 int value = Prompt("Введите число N -> ");   // Вводим значение числа
 
 int array = 1;                               // Вводим стартовое значение
-while (array < value)                        // Условие окончания цикла
+while (array <= value)                        // Условие окончания цикла
 {
     int Remains = array % 2;                 // Определение остатка от деления на 2
     if (Remains == 0)                        // Определение четности
