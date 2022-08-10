@@ -31,7 +31,6 @@ int valueLength = Prompt("Введите количество проверяем
 int[] array = new int[valueLength];                                              // Задан новый массив целых чисел длиной valueLength
 FillArray(array);                                                                // Обращение к функции заполнения масива
 int count = array.Length;                                                        // Определение длины массива
-// int position = 0;                                                             // Стартовая позиция
 
 for (int position = 0; position < count; position++)                             // Цикл, пока мы в массиве
 {
@@ -40,11 +39,9 @@ for (int position = 0; position < count; position++)                            
     {
         System.Console.WriteLine($"{array[position]} -> нет");                // Вывод результата
     }
-    else
-    // if (result == 0)                                                                     // Если четность выполняется
+    else                                                                  // Если четность выполняется
     {
         System.Console.WriteLine($"{array[position]} -> да");               // Вывод результата
         break;                                                               // Остановка программы
     }
-    // position++;                                                          // Шаг итерации
 }
