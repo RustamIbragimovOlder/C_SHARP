@@ -3,3 +3,30 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
+int value = Prompt("Введите число -> ");           // Ввод исходных данных
+
+int Prompt(string message)                         // Функция, на вход получает параметр, на выходе введенное с консоли значение
+{
+    System.Console.Write(message);                 // Вывести сообщение
+    string readValue = Console.ReadLine();         // Считавает с консоли строку
+    int result = int.Parse(readValue);             // Преобрадует строку в целое число
+    return result;                                 // Возвращает результат
+}
+
+int DecompositionNumber(int value)                  // Функция разложения 3-х значного числа по разрядам
+{
+    int number1 = value % 10;                       // Определение 1 разряда
+    return number1;                                 // Возвращение результата
+}
+if (value > 99)                                     // Проверка наличия 3-й цифры
+{
+    while (value > 999)                             // Если 3-я цифра есть, сокращаем исходное число до 3-х разрядов
+    {
+        value = value / 10;                         // Цикл деления на 10, пока не останентся три разряда 
+    }
+    System.Console.WriteLine(DecompositionNumber(value)); // Обращение к функции и вывод результата
+}
+else                                                 // Если 3-й цифры нет, то -
+{
+    System.Console.WriteLine("третьей цифры нет"); // Вывод результата
+}
