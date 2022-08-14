@@ -11,12 +11,12 @@ int Prompt(string message)
 }
 
 int a1 = Prompt("Введите значение координаты точки А по оси X -> ");
-int b1 = Prompt("Введите значение координаты точки А по оси X -> ");
-int z1 = Prompt("Введите значение координаты точки А по оси X -> ");
+int b1 = Prompt("                                    по оси Y -> ");
+int z1 = Prompt("                                    по оси Z -> ");
 int a2 = Prompt("Введите значение координаты точки B по оси X -> ");
-int b2 = Prompt("Введите значение координаты точки B по оси X -> ");
-int z2 = Prompt("Введите значение координаты точки B по оси X -> ");
+int b2 = Prompt("                                    по оси Y -> ");
+int z2 = Prompt("                                    по оси Z -> ");
 
 double length = Math.Sqrt((a1 - a2) * (a1 - a2) + (b1 - b2) * (b1 - b2) + (z1 - z2) * (z1 - z2));
-System.Console.Write($"A ({a1},{b1},{z1}); B ({a2},{b2},{z2}) -> {length}");
-System.Console.WriteLine("");
+Console.Write($"A ({a1},{b1},{z1}); B ({a2},{b2},{z2}) -> {length}");
+Console.WriteLine();

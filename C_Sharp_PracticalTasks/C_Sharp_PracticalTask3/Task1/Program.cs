@@ -3,8 +3,6 @@
 // 12821 -> да
 // 23432 -> да
 
-int value = Prompt("Введите 5-и значное число -> ");
-
 int Prompt(string message)
 {
     System.Console.Write(message);
@@ -13,33 +11,34 @@ int Prompt(string message)
     return result;
 }
 
-void ArrayFill(int array)
-{
-    int[] set = new int[5];
-    int length = set.Length;
-    int footing = 10;
-    for (int index = 0; index < length; index++)
-    {
-        int degree = Convert.ToInt32(Math.Pow(footing, index));
-        int result = value / degree;
-        set[index] = result % 10;
-    }
-}
-
-if (value > 9999 && value < 100000)
+void SelectDigits(int number)
 {
     int[] array = new int[5];
-    ArrayFill(array);
-    if (array[0] == array[4] && array[3] == array[1])
+    int size = array.Length;
+    for (int index = 0; index < size; index++)
     {
-        System.Console.WriteLine($"{value} -> да");
+        int x = 4 - index;
+        int y = Convert.ToInt32(Math.Pow(10, x));
+        int z = number / y;
+        array[index] = z % 10;
+        index++;
+    }
+    if (array[0] == array[4] & array[1] == array[3])
+    {
+        Console.WriteLine($"{number} -> да");
     }
     else
     {
-        System.Console.WriteLine($"{value} -> нет");
+        Console.WriteLine($"{number} -> нет");
     }
+}
+
+int value = Prompt("Введите 5-и значное число -> ");
+if (value > 9999 & value < 100000)
+{
+    SelectDigits(value);
 }
 else
 {
-    System.Console.WriteLine($"Введенное число не является пятизначным");
+    Console.WriteLine("Введенное число не является пятизначным");
 }

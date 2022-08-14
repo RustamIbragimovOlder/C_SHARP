@@ -10,15 +10,16 @@ int Prompt(string message)
     return result;
 }
 
-void Power3Method(int value)
+void ReturnDegre(int value)
 {
-    int index = 1;
-    while (index <= value)
+    int degree = 0;
+    for (int index = 1; index <= value; index++)
     {
-        System.Console.Write($"{Math.Pow(index, 3)} \t");
-        index++;
+        degree = Convert.ToInt32(Math.Pow(index, 3));
+        Console.Write($"{degree}  ");
     }
 }
+
 
 int value = Prompt("Введите число N -> ");
 if (value <= 0)
@@ -27,6 +28,7 @@ if (value <= 0)
 }
 else
 {
-    Power3Method(value);
+    Console.Write($"{value} -> ");
+    ReturnDegre(value);
 }
-System.Console.WriteLine(); // Для удобства восприятия результата
+// Console.WriteLine();
