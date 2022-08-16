@@ -1,42 +1,73 @@
-﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет,
+// является ли оно палиндромом.
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
 
+// Считывает значение, введенное с консоли
 int Prompt(string message)
 {
-    System.Console.Write(message);
+    Console.Write(message);
     string readValue = Console.ReadLine();
     int result = int.Parse(readValue);
     return result;
 }
 
-void SelectDigits(int number)
+// Проверяет является ли введенное число пятизначням
+bool ComplianceCheck(int number)
 {
-    int[] array = new int[5];
-    int size = array.Length;
-    for (int index = 0; index < size; index++)
+    if (number > 9999 & number < 100000)
     {
-        int x = 4 - index;
-        int y = Convert.ToInt32(Math.Pow(10, x));
-        int z = number / y;
-        array[index] = z % 10;
-        index++;
-    }
-    if (array[0] == array[4] & array[1] == array[3])
-    {
-        Console.WriteLine($"{number} -> да");
+        return true;
     }
     else
     {
-        Console.WriteLine($"{number} -> нет");
+        return false;
     }
 }
 
-int value = Prompt("Введите 5-и значное число -> ");
-if (value > 9999 & value < 100000)
+// Осуществляет переворот разрядов числа (01234 -> 43210)
+int SelectDigits(int number)
 {
-    SelectDigits(value);
+    int value = 0;
+    while (number > 0)
+    {
+        int remains = number % 10;
+        number = number / 10;
+        value = value * 10 + remains;
+    }
+    return value;
+}
+
+// Проверяет равенство двух чисел
+bool CheckingEqualityOfDigits(int value1, int value2)
+{
+    if (value1 == value2)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int value1 = Prompt("Введите 5-и значное число -> ");
+bool valid = ComplianceCheck(value1);
+if (valid)
+{
+    {
+        int value2 = SelectDigits(value1);
+        bool Palindrome = CheckingEqualityOfDigits(value1, value2);
+        if (Palindrome)
+        {
+            Console.WriteLine($"{value1} -> да");
+        }
+        else
+        {
+            Console.WriteLine($"{value1} -> нет");
+        }
+    }
 }
 else
 {

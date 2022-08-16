@@ -10,16 +10,15 @@ int Prompt(string message)
     return result;
 }
 
-void ReturnDegre(int value)
+void ReturnDegre(int number)
 {
-    int degree = 0;
-    for (int index = 1; index <= value; index++)
+    int index = 1;
+    while (index <= number)
     {
-        degree = Convert.ToInt32(Math.Pow(index, 3));
-        Console.Write($"{degree}  ");
+        System.Console.Write($"{Math.Pow(index, 3)}\t");
+        index++;
     }
 }
-
 
 int value = Prompt("Введите число N -> ");
 if (value <= 0)
@@ -31,4 +30,4 @@ else
     Console.Write($"{value} -> ");
     ReturnDegre(value);
 }
-// Console.WriteLine();
+Console.WriteLine();
