@@ -7,7 +7,7 @@
 
 int Prompt(string message)
 {
-    System.Console.Write(message);
+    Console.Write(message);
     string readValue = Console.ReadLine();
     int result = int.Parse(readValue);
     return result;
@@ -23,5 +23,12 @@ int SumSequence(int number)
     return answer;
 }
 
+int SumGauss(int number)
+{
+    int answer = (int)((number + 1) * (number / 2.0));
+    return answer;
+}
+
 int number = Prompt("Введите число А => ");
-System.Console.WriteLine($"{number} -> {SumSequence(number)}");
+Console.WriteLine($"{number} -> {SumSequence(number)}");
+System.Console.WriteLine($"По Гауссу {number} -> {SumGauss(number)}");
