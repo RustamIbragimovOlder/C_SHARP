@@ -7,38 +7,38 @@ int[] RandomArray(int Length)
 {
     int[] array = new int[Length];
     int index = 0;
-    while(index < array.Length)
+    while (index < array.Length)
     {
-        array[index] = new Random().Next(1,5);
+        array[index] = new Random().Next(1, 10);
         index++;
     }
     return array;
 }
 
-void PrintArray(int[] a)
+void PrintArray(int[] set)
 {
-    int count = a.Length;
+    int count = set.Length;
     int i = 0;
     while (i < count)
     {
-        Console.Write($"{a[i]}  ");
+        Console.Write($"{set[i]}  ");
         i++;
     }
     Console.WriteLine();
 }
 
-int[] MultiPairArray(int[] a)
+int[] MultiPairArray(int[] array)
 {
-    int count = a.Length;
+    int count = array.Length;
     int[] result = new int[(count / 2) + (count % 2)];
-    result[result.Length - 1] = a[result.Length - 1]; 
-    for(int i = 0; i < (count / 2); i++)
+    result[result.Length - 1] = array[result.Length - 1];     // Повторяет средний элемент нечетного массива
+    for (int i = 0; i < (count / 2); i++)
     {
-        result[i] = a[i] * a[a.Length - i - 1];
+        result[i] = array[i] * array[array.Length - i - 1];
     }
     return result;
 }
 
-int[] array = RandomArray(7);
+int[] array = RandomArray(10);
 PrintArray(array);
 PrintArray(MultiPairArray(array));
