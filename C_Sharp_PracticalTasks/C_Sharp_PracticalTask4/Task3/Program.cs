@@ -11,13 +11,13 @@ int Prompt(string message)
 }
 
 // Функция генерации массива
-int[] FillArray(int Length, int firstElement, int lastElement)
+int[] FillArray(int Length, int lowLimit, int hiLimit)
 {
     int[] array = new int[Length];
     int i = 0;
     while (i < array.Length)
     {
-        array[i] = new Random().Next(firstElement, lastElement);
+        array[i] = new Random().Next(lowLimit, hiLimit);
         i++;
     }
     return array;
@@ -37,27 +37,59 @@ void PrintArray(int[] array)
 // Функция поиска второго максимума в массиве
 int SearchSecondMaximum(int[] array)
 {
-    int max1 = 0;
-    int max2 = 0;
-    for( int i=0; i < array.Length; i++)
-        if (array[i] > max1)
-        {
-            max2 = max1;
-            max1 = array[i];
-        }
-    else
+    int max1 = array[0];
+    int max2 = array[1];
+    if (max1 < max2)
     {
-       if (array[i] != max1 && array[i] > max2)
-       {
-          max2 = array[i];
-       }
+        max1 = array[1];
+        max2 = array[0];
+    }
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (max1 > max2)
+        {
+            if (array[i] > max1)
+            {
+                max2 = max1;
+                max1 = array[i];
+            }
+            if (array[i] == max1)
+            {
+                // ничего
+            }
+            if (array[i] < max1 & array[i] > max2)
+            {
+                max2 = array[i];
+            }
+            if (array[i] == max2)
+            {
+                // ничего
+            }
+        }
+        if (max1 == max2)
+        {
+            if (array[i] > max1)
+            {
+                max2 = max1;
+                max1 = array[i];
+            }
+            if (array[i] < max1)
+            {
+                max2 = array[i];
+            }
+            if (array[i] == max1)
+            {
+                // как-то второго максимума нет
+            }
+        }
     }
     return max2;
 }
 
-int value = Prompt("Введите число N, соответствующее количеству элементов в массиве -> ");
-int firstElement = Prompt("Введите число, соответствующее нижней границе диапазона -> ");
-int lastElement = Prompt("                              верхней границе диапазона -> ");
-int[] set = FillArray(value, firstElement, lastElement);
+int count = Prompt("Введите число N, соответствующее количеству элементов в массиве -> ");
+int lowLimit = Prompt("Введите число, соответствующее нижней границе диапазона -> ");
+int hiLimit = Prompt("                              верхней границе диапазона -> ");
+int[] set = FillArray(count, lowLimit, hiLimit);
 PrintArray(set);
+System.Console.WriteLine();
 System.Console.WriteLine($"Второй максимум -> {SearchSecondMaximum(set)}");
