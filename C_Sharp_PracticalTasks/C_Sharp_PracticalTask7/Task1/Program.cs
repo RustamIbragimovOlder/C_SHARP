@@ -19,7 +19,7 @@ void FillArray(double[,] matrix, double minLimit, double maxLimit)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = (maxLimit - minLimit) * random.Next() / 2147483648 + minLimit;
+            matrix[i, j] = (maxLimit - minLimit) * random.NextDouble() + minLimit;
         }
     }
 }
