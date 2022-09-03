@@ -12,15 +12,13 @@ int Prompt(string message)
     return result;
 }
 
-void FindSumNaturalElements(int numberM, int numberN, int sum)
+int FindSumNaturalElements(int numberM, int numberN)
 {
     if (numberM > numberN)
     {
-        Console.WriteLine($"Сумма элементов -> {sum}");
-        return;
+        return 0;
     }
-    sum = sum + (numberM++);
-    FindSumNaturalElements(numberM, numberN, sum);
+    return FindSumNaturalElements(numberM + 1, numberN) + numberM;
 }
 
 int numberM = Prompt("Введите число M -> ");
@@ -31,6 +29,5 @@ if (numberM > numberN)
 }
 else
 {
-    int sum = 0;
-    FindSumNaturalElements(numberM, numberN, sum);
+    Console.WriteLine($"M = {numberM}; N = {numberN} -> {FindSumNaturalElements(numberM, numberN)}");
 }
